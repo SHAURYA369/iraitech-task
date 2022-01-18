@@ -4,11 +4,13 @@ import { AccountBox } from "./components/accountBox";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import axios from "axios";
 import ProfileCard from "./components/profileCard/profileCard";
+import auth from "./utils/auth";
 
 axios.defaults.baseURL = "http://localhost:5000";
 axios.defaults.headers.common = {
   "Content-Type": "application/json",
 };
+auth.setToken(auth.getToken());
 
 const AppContainer = styled.div`
   width: 100%;
